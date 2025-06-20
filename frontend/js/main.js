@@ -54,7 +54,7 @@ async function login(username, password) {
         }
     } catch (error) {
         console.error('登录请求失败:', error);
-        showError('登录失败，请检查网络连接');
+        showError('登录失败,请检查网络连接');
         return false;
     }
 }
@@ -76,7 +76,7 @@ async function register(username, password, confirmPassword, isExpert) {
             return false;
         }
     } catch (error) {
-        showError('注册失败，请稍后重试');
+        showError('注册失败,请稍后重试');
         return false;
     }
 }
@@ -98,7 +98,7 @@ async function getThesisList(search = '', status = 'all') {
         }
     } catch (error) {
         console.error('获取论文列表请求失败:', error);
-        showError('获取论文列表失败，请检查网络连接');
+        showError('获取论文列表失败,请检查网络连接');
         return [];
     }
 }
@@ -165,7 +165,7 @@ async function getStats() {
         }
     } catch (error) {
         console.error('获取统计数据请求失败:', error);
-        showError('获取统计数据失败，请检查网络连接');
+        showError('获取统计数据失败,请检查网络连接');
         return null;
     }
 }
@@ -282,7 +282,7 @@ async function handleRegister(event) {
     
     if (await register(username, password, confirmPassword, isExpert)) {
         bootstrap.Modal.getInstance(document.getElementById('registerModal')).hide();
-        showError('注册成功，请登录');
+        showError('注册成功,请登录');
     }
 }
 
@@ -340,12 +340,12 @@ function setupSearchAndFilter() {
 
 // 初始化
 document.addEventListener('DOMContentLoaded', async () => {
-    console.log('页面加载完成，开始初始化...');
+    console.log('页面加载完成,开始初始化...');
     
     // 测试API连接
     const apiConnected = await testApiConnection();
     if (!apiConnected) {
-        showError('无法连接到后端服务器，请确保服务器正在运行');
+        showError('无法连接到后端服务器,请确保服务器正在运行');
         return;
     }
     
